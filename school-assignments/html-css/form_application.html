@@ -1,0 +1,85 @@
+	<!DOCTYPE html>
+	<html lang = en>
+
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			.content {
+				max-width: 500px;
+				margin: auto;
+			}
+		</style>
+
+		<title>Form - Info about you!</title>
+
+	</head>
+
+	<body>
+
+		<div class="content">
+			<h1>User form</h1>
+			<h2>Just something so we can get to know you better.</h2>
+			<br>
+			
+
+			
+			<b>Please enter your name in the field below (max 20 characters):</b>
+			<form action="/action_page.php">
+				<label for="username">Username:</label>
+				<input type="text" id="username" name="username" maxlength="20" size="35"><br>
+			</form>
+			<br>
+			
+
+			
+			<label for="w3review"><b>Tell us something about yourself:</b></label><br>
+
+			<textarea id="w3review" name="w3review" rows="4" cols="30" style="background-color:pink"> "When I'm not at work, I like to..."
+			</textarea>
+			<br>
+
+			
+			<i>Do you train any sports?:</i>
+			<form action="/action_page.php">
+				<input type="radio" name="answer" value="yes"> Yes<br>
+				<input type="radio" name="answer" value="no"> No<br>
+			</form>
+			<br>
+
+			
+			<b><i>In which ways do you usually find interesting information?<br>
+			(You can choose more than one):</i></b><br>
+			<input type="checkbox" id="info1" name="info1" value="Books">
+			<label for="info1"> Books </label><br>
+			<input type="checkbox" id="info2" name="info2" value="Newspapers">
+			<label for="info2"> Newspapers </label><br>
+			<input type="checkbox" id="info3" name="info3" value="Online">
+			<label for="info3"> Online </label>
+			<br>
+
+			<br>
+			<form action="/action_page.php">
+				<label for="movies">Choose a favorite movie genre:</label>
+				<br>
+				<select name="movies" id="movies">
+					<option value="">....</option>
+					<option value="action">Action</option>
+					<option value="romance">Romance</option>
+					<option value="comedy">Comedy</option>
+					<option value="drama">Drama</option>
+					<option value="horror">Horror</option>
+				</select>
+				<br><br>
+			</form>
+			<br>
+			
+			
+			<h4>When you are done and finished please press the "Submit" button below. All the info will be sent and saved on the server.</h4>
+			<input type="submit" value="Submit">
+			
+
+		</div>
+
+	</body>
+
+	</html>

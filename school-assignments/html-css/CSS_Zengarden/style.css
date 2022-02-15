@@ -1,0 +1,159 @@
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+
+	background: url(https://wallpaperaccess.com/full/2641063.gif);
+	background-attachment: fixed;
+
+}
+
+header {
+
+	text-align: center;
+	width: 100%;
+}
+
+header h1 { 
+	background: transparent url(http://csszengarden.com/001/h1.gif);
+	margin: 0 auto;
+	margin-top: 20px;
+	display: inline-block;
+	width: 219px;
+	height: 87px;
+
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+header h2 {
+
+	font-size: 25px;
+	font-weight: bold;
+	text-decoration: underline;
+
+}
+
+a:link { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: #660099;
+}
+
+a:hover, a:focus, a:active { 
+	text-decoration: underline; 
+	color: #ccc;
+}
+
+.main-supporting, .sidebar, footer{
+
+	border: 1px #ccc solid;
+	padding: 20px;
+	background: rgba(179, 224, 255, 0.2);
+}
+
+.main-supporting div {
+
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+
+}
+
+.summary {
+
+	text-align: center;
+	color: white;
+	font-weight: bold;
+}
+
+.preamble {
+
+	text-align: center;
+	font-weight: bold;
+	color: white;
+	margin-bottom: 50px;
+}
+
+.preamble h3 {
+
+	font-size: 25px;
+	color: black;
+	text-decoration: underline;
+}
+
+.explanation h3, .participation h3, .benefits h3, .requirements h3 {
+
+	text-decoration: underline;
+}
+
+.explanation {
+
+	flex: 1;
+	border: 3px #ccc solid;
+	padding: 15px;
+	margin-bottom: 10px;
+	font: italic bold 15px georgia;
+	background: rgba(200, 255, 255, 0.1);
+
+
+}
+
+.participation {
+
+	flex: 1;
+	border: 3px #ccc solid;
+	padding: 15px;
+	margin-bottom: 10px;
+	font: italic bold 15px georgia;
+	background: rgba(200, 255, 255, 0.1);
+
+
+
+}
+
+.benefits {
+
+
+	flex: 1;
+	border: 3px #ccc solid;
+	padding: 15px;
+	margin-bottom: 10px;
+	font: italic bold 15px georgia;
+	background: rgba(200, 255, 255, 0.1);
+
+}
+
+.requirements {
+
+	flex: 1;
+	border: 3px #ccc solid;
+	padding: 15px;
+	margin-bottom: 10px;
+	font: italic bold 15px georgia;
+	background: rgba(200, 255, 255, 0.1);
+
+
+}
+
+footer {
+
+	flex: 1;
+	border: 3px #ccc solid;
+	padding: 15px;
+	margin-bottom: 10px;
+	font: italic bold 15px georgia;
+
+}
+
+.sidebar {
+
+	flex: 1;
+	color: white;
+	background: rgb(2,0,36);
+	background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0) 0%, rgba(0,255,239,0.4962359943977591) 100%);
+
+}
