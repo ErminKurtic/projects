@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/* - - Repository -> Service layer - - */
+/* - - Repository -> Service layer (Business logic) - - */
 @Service
 public class EmployeeService {
 
@@ -20,4 +20,7 @@ public class EmployeeService {
         return employeeRepository.findAll();
     }
 
+    public void addNewEmployee(Employee employee) {
+        System.out.println(employee);
+    }
 }
