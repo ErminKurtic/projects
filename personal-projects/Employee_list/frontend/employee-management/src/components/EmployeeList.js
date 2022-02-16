@@ -1,5 +1,80 @@
-function EmployeeList() {
-    return <div>EmployeeList</div>;
-}
+import { useNavigate } from "react-router-dom";
+import EmployeeService from "../services/EmployeeService";
+import { useState, useEffect } from "react";
+import "./EmployeeList.css";
+
+const EmployeeList = () => {
+    const navigate = useNavigate();
+
+    const [loading, setLoading] = useState(true);
+    const [employees, setEmployees] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            setLoading(true);
+            try {
+                const respone = await EmployeeService.getEmployees();
+                setEmployees(respone.data);
+            } catch (error) {
+                console.log(error);
+            }
+            setLoading(false);
+        };
+        fetchData();
+    }, []);
+
+    return (
+        <>
+            <div className="EmployeeList">
+                <div>
+                    <button
+                        className="EmployeeList--addEmployeeBtn"
+                        onClick={() => navigate("addEmployee")}
+                    >
+                        Add Employee
+                    </button>
+                </div>
+                <div className="EmployeeList--Wrapper">
+                    <table className="EmployeeList--Wrapper--header">
+                        <thead className="EmpployeeList--Wrapper--header--title">
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email Id</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        {!loading && (
+                            <tbody>
+                                {employees.map((employee) => (
+                                    <tr key={employee.id}>
+                                        <td>
+                                            <div>{employee.firstName}</div>
+                                        </td>
+                                        <td>
+                                            <div>{employee.lastName}</div>
+                                        </td>
+                                        <td>
+                                            <div>{employee.emailId}</div>
+                                        </td>
+                                        <td>
+                                            <a href="#">Edit</a>
+                                            <a
+                                                href="#"
+                                                className="EmployeeList--Wrapper--header--title--deleteBtn"
+                                            >
+                                                Delete
+                                            </a>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        )}
+                    </table>
+                </div>
+            </div>
+        </>
+    );
+};
 
 export default EmployeeList;

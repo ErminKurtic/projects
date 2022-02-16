@@ -1,0 +1,28 @@
+.EmployeeList {
+}
+
+.EmployeeList--addEmployeeBtn {
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.EmployeeList--Wrapper {
+    border: 1px solid black;
+    margin: 1rem;
+}
+
+.EmployeeList--Wrapper--header {
+    min-width: 100%;
+}
+
+.EmpployeeList--Wrapper--header--title {
+    text-align: left;
+    font: medium;
+    color: gray;
+    text-transform: uppercase;
+    background-color: antiquewhite;
+}
+
+.EmployeeList--Wrapper--header--title--deleteBtn {
+    margin-left: 1rem;
+}
