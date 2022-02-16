@@ -1,0 +1,50 @@
+.AddEmployee {
+    margin: 0 auto;
+    padding: 2rem;
+    box-shadow: 5px 5px 6px -5px #000000;
+    border-radius: 7px;
+    max-width: 600px;
+}
+
+.AddEmployee--form {
+    display: flex;
+    flex-direction: column;
+}
+
+.AddEmployee--form__input {
+    margin-top: 0.2rem;
+    margin-bottom: 0.8rem;
+    max-width: 15rem;
+}
+
+.AddEmployee--buttonContainer {
+    display: flex;
+}
+
+.AddEmployee--form__saveButton {
+    background-color: green;
+    color: white;
+    font-size: large;
+    border-radius: 3px;
+    height: 2rem;
+    width: 4rem;
+}
+
+.AddEmployee--form__saveButton:hover {
+    background-color: greenyellow;
+    cursor: pointer;
+}
+
+.AddEmployee--form__clearButton {
+    background-color: red;
+    color: white;
+    font-size: large;
+    border-radius: 3px;
+    height: 2rem;
+    width: 4rem;
+}
+
+.AddEmployee--form__clearButton:hover {
+    background-color: pink;
+    cursor: pointer;
+}
