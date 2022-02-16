@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import EmployeeService from "../services/EmployeeService";
 import { useState, useEffect } from "react";
 import "./EmployeeList.css";
+import Employee from "./Employee";
 
 const EmployeeList = () => {
     const navigate = useNavigate();
@@ -29,7 +30,7 @@ const EmployeeList = () => {
                 <div>
                     <button
                         className="EmployeeList--addEmployeeBtn"
-                        onClick={() => navigate("addEmployee")}
+                        onClick={() => navigate("/addEmployee")}
                     >
                         Add Employee
                     </button>
@@ -47,26 +48,10 @@ const EmployeeList = () => {
                         {!loading && (
                             <tbody>
                                 {employees.map((employee) => (
-                                    <tr key={employee.id}>
-                                        <td>
-                                            <div>{employee.firstName}</div>
-                                        </td>
-                                        <td>
-                                            <div>{employee.lastName}</div>
-                                        </td>
-                                        <td>
-                                            <div>{employee.emailId}</div>
-                                        </td>
-                                        <td>
-                                            <a href="#">Edit</a>
-                                            <a
-                                                href="#"
-                                                className="EmployeeList--Wrapper--header--title--deleteBtn"
-                                            >
-                                                Delete
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    <Employee
+                                        employee={employee}
+                                        key={employee.id}
+                                    ></Employee>
                                 ))}
                             </tbody>
                         )}
