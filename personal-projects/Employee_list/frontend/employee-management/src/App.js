@@ -1,12 +1,17 @@
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import AddEmployee from "./components/AddEmployee";
+import EmployeeList from "./components/EmployeeList";
 import Navbar from "./components/Navbar";
 
 function App() {
     return (
         <>
-            <Navbar />
-            <AddEmployee />
+            <BrowserRouter>
+                <Navbar />
+                <AddEmployee />
+                <EmployeeList />
+            </BrowserRouter>
         </>
     );
 }

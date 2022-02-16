@@ -1,6 +1,32 @@
+import { useState } from "react";
+import EmployeeService from "../services/EmployeeService";
 import "./AddEmployee.css";
 
 const AddEmployee = () => {
+    const [employee, setEmployee] = useState({
+        id: "",
+        firstName: "",
+        lastName: "",
+        emailId: "",
+    });
+
+    const handleChange = (e) => {
+        const value = e.target.value;
+        setEmployee({ ...employee, [e.target.name]: value });
+    };
+
+    const saveEmployee = (e) => {
+        /* Disable refresh of website on save*/
+        e.preventDefault();
+        EmployeeService.saveEmployee(employee)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
     return (
         <div className="AddEmployee">
             <div>
@@ -8,22 +34,40 @@ const AddEmployee = () => {
             </div>
             <div className="AddEmployee--form">
                 <label>First Name:</label>
-                <input type="text" className="AddEmployee--form__input"></input>
+                <input
+                    type="text"
+                    className="AddEmployee--form__input"
+                    name="firstName"
+                    value={employee.firstName}
+                    onChange={(e) => handleChange(e)}
+                ></input>
             </div>
             <div className="AddEmployee--form">
                 <label>Last Name:</label>
-                <input type="text" className="AddEmployee--form__input"></input>
+                <input
+                    type="text"
+                    className="AddEmployee--form__input"
+                    name="lastName"
+                    value={employee.lastName}
+                    onChange={(e) => handleChange(e)}
+                ></input>
             </div>
             <div className="AddEmployee--form">
                 <label>Email:</label>
                 <input
                     type="email"
                     className="AddEmployee--form__input"
+                    name="emailId"
+                    value={employee.emailId}
+                    onChange={(e) => handleChange(e)}
                 ></input>
             </div>
             <div className="AddEmployee--buttonContainer">
                 <div>
-                    <button className="AddEmployee--form__saveButton">
+                    <button
+                        onClick={saveEmployee}
+                        className="AddEmployee--form__saveButton"
+                    >
                         Save
                     </button>
                 </div>
