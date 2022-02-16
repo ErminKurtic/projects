@@ -1,3 +1,7 @@
 .Employee--deleteBtn {
     margin-left: 1rem;
+    cursor: pointer;
+    background-color: red;
+    border-radius: 3px;
+    color: white;
 }

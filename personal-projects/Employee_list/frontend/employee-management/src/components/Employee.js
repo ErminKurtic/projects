@@ -1,5 +1,5 @@
 import "./Employee.css";
-const Employee = ({ employee }) => {
+const Employee = ({ employee, deleteEmployee }) => {
     return (
         <tr key={employee.id}>
             <td>
@@ -13,7 +13,10 @@ const Employee = ({ employee }) => {
             </td>
             <td>
                 <a href="#">Edit</a>
-                <a href="#" className="Employee--deleteBtn">
+                <a
+                    onClick={(e, id) => deleteEmployee(e, employee.id)}
+                    className="Employee--deleteBtn"
+                >
                     Delete
                 </a>
             </td>
